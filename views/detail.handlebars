@@ -1,0 +1,17 @@
+<div id="job-view-container" class="container">
+  <div class="row text-center">
+    <a href="/" class="back-link main-color"> Back </a>
+    <div id="img-container" class="col-md-12">
+      <img src="/img/company_logo.jpg" alt="Company" />
+    </div>
+    <div class="col-md-12">
+      <h1 class="main-color">{{job.dataValues.title}}</h1>
+      <p class="bold">We are looking for:</p>
+      <div class="job-desc">{{job.dataValues.description}}</div>
+      <p><span class="bold"> Salary:</span> ${{job.dataValues.salary}}</p>
+      <p><span class="bold">Send your CV to:</span><a
+          href="mail:to{{job.dataValues.email}}"
+        >{{job.dataValues.email}}</a></p>
+    </div>
+  </div>
+</div>
