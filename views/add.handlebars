@@ -1,0 +1,71 @@
+<div id="add-form-container" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">
+        Reach the right candidates, post your job.
+      </h1>
+    </div>
+    <div id="form-box" class="col-md-12">
+      <h2>A detailed job description helps attract the right candidates, be
+        clear about the role to find the perfect fit</h2>
+      <form action="/jobs/add" method="POST">
+        <div class="form-group">
+          <label for="title"> Job title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="description"> Job description: </label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="description"
+            name="description"
+            placeholder="Describe the role and responsibilities"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="company"> Company: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="company"
+            name="company"
+            placeholder="Name of the company that's hiring"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email"> E-mail: </label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Contact email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="salary"> Salary range: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="salary"
+            name="salary"
+            placeholder="Provide the salary offer"
+            required
+          />
+        </div>
+        <input type="hidden" name="new_job" value="1" />
+        <button type="submit" class="btn btn-primary"> Send </button>
+      </form>
+    </div>
+  </div>
+</div>
