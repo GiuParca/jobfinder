@@ -7,17 +7,19 @@ const bodyParser = require("body-parser");
 const Job = require("./models/Job");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
+const cookieParser = require("cookie-parser")
 
 const PORT = 3000;
 
 //body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cookieParser());
 
 //handle bars
-app.set("views", path.join(__dirname, "views")); //diretorio das  views, onde ficam os templates do projeto
-app.engine("handlebars", engine({ defaultLayout: "main" })); // arquivo principal do layout
-app.set("view engine", "handlebars"); // biblioteca utilizada para renderizar as views
+app.set("views", path.join(__dirname, "views")); 
+app.engine("handlebars", engine({ defaultLayout: "main" }));
+app.set("view engine", "handlebars"); 
 
 db.authenticate()
   .then(() => {
