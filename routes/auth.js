@@ -55,15 +55,6 @@ router.post("/login", async (req, res) => {
     console.error(err);
     return res.status(500).send("Internal server error.");
   }
-
-
-  jwt.verify(jwt, secret, (err, userInfo) => {
-    if(err){
-      res.status(403).end();
-      return
-    }
-    res.status(200).send(userInfo);
-  })
 });
 
 
