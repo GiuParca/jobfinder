@@ -1,14 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Job = require("../models/Job");
+const authenticateToken = require("../middlewares/authMiddleware");
 
 
-router.get("/test", (req, res) => {
-  res.send("test");
-});
-
-//detalhe da vaga - view
-router.get("/detail/:id", (req, res) =>
+router.get("/detail/:id", authenticateToken, (req, res) =>
   Job.findOne({
     where: { id: req.params.id },
   })
@@ -20,11 +16,11 @@ router.get("/detail/:id", (req, res) =>
     .catch((err) => console.log(err))
 );
 
-router.get("/add", (req, res) => {
+router.get("/add", authenticateToken, (req, res) => {
   res.render("add");
 });
 
-router.post("/add", (req, res) => {
+router.post("/add", authenticateToken, (req, res) => {
   const { title, description, salary, company, email, new_job } = req.body;
 
   console.log("Request Body:", req.body);
